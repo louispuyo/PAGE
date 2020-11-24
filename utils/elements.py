@@ -2,7 +2,7 @@ import pygame
 import os
 
 pygame.init()
-current_dir = os.getcwd()
+current_dir = os.getcwd()+"/PAGE"
 
 class Element:
     def __init__(self, image_path, speed_down, speed_up, speed_right, speed_left, attack, defense, x_custom=100, y_custom=100, x=10, y=10):

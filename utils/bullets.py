@@ -1,9 +1,13 @@
 import pygame
+import os 
+
+current_dir = os.getcwd()
 
 pygame.init()
 
 # create the screen
 screen = pygame.display.set_mode((800, 600))
+
 
 # Background
 background = pygame.image.load('/Users/snowden/Documents/COURS_L1S1/option_info/python/games/makets/models_invaders/background.png')

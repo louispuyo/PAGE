@@ -6,7 +6,9 @@ from utils.menu import menu, menu_weapon
 # from utils.advanced import Weapons
 import os 
 
-current_dir = os.getcwd()
+
+current_dir = os.getcwd()+"/PAGE"
+
 
 # Screen
 Screen_class = Screen(background=f"{current_dir}/img/bg/bg2.jpg", dimension=(500, 700))

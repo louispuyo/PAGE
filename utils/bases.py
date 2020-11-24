@@ -4,7 +4,7 @@ import os
 
 
 pygame.init()
-current_dir = os.getcwd()
+current_dir = os.getcwd()+"/PAGE"
 ########## PERSO ###############
 
 class Alien:
