@@ -2,8 +2,7 @@ import pygame
 from utils.bases import Screen, Personnage, colision, Weapons_list, HeathBare, Alien_list
 from utils.elements import enemies
 from utils.menu import menu, menu_weapon
-# from utils.advanced import Personnage_X
-# from utils.advanced import Weapons
+
 import os 
 
 
@@ -17,6 +16,7 @@ screen = Screen_class.screen
 # fonts 
 text_size = 30
 myfont = pygame.font.Font(None, text_size) 
+
 
 ### Menu 
 
@@ -36,9 +36,7 @@ weapon_model = menu_weapon(screen, [Weapons_list[model] for model in Weapons_lis
 Player_class = Personnage(perso)
 player = Player_class.small_image
 
-# perso 2
-# player2_class = Personnage_X()
-#
+
 # ##
 
 # bots
@@ -48,7 +46,6 @@ e1 = enemies["kratos"]
 
 w0 = Weapons_list[weapon_model]
 kratos_h = HeathBare(e1)
-# Weapons(20, 200, 30, 20, 20, 50, "029-vortex.png","029-vortex.png")
 shoot = w0.shoot
 
 
@@ -120,7 +117,6 @@ while running:
             
             if event.key == pygame.K_2:
                 kratos = True
-                # print("key 2 pressed")
             if event.key == pygame.K_b:
                 print("boost")
                 if stock_value >= 2:
@@ -165,7 +161,7 @@ while running:
                 screen.blit(missile, (w0.bx, w0.by))
 
 
-    if kratos:
+    if in_live == False:
         e1.moving()
         show_HeathBare(200, 650, level=e1.defense)
         # screen.blit(screen, kratos_h.disp_jauge())
@@ -219,5 +215,5 @@ while running:
     # blit on screen
     screen.blit(player, (Player_class.x, Player_class.y))
     if in_live: screen.blit(e0.small_image, (e0.x, e0.y))
-    if kratos: screen.blit(e1.small_image, (e1.x, e1.y))
+    else: screen.blit(e1.small_image, (e1.x, e1.y))
     pygame.display.update()
